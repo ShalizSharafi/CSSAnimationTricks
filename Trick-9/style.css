@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+       min-height: 100vh;
+       background-color: #000;
+}
+.orbit{
+width: 400px;
+height: 400px;
+border-radius: 50%;
+border: 5px solid grey;
+margin: 100px auto;
+position: relative;
+transform-style: preserve-3d;
+transform:perspective(1000px)  rotateX(75deg);
+>.sun{
+       width: 200px;
+       height: 200px;
+       border-radius: 50%;
+       background-color: rgb(255, 242, 0);
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform:translate(-50%,-50%) rotateX(100deg);
+       box-shadow: 0 0 20px 1px white;
+}
+>.earth{
+       width: 100px;
+       height: 100px;
+       border-radius: 50%;
+       top: calc(50% - 50px);
+       left:-50px;
+       position: absolute;
+       transform-origin: 250px 50%;
+       transform-style: preserve-3d;
+       animation: earth 15s linear infinite;
+       >div{
+              width: 100%;
+              height: 100%;
+              background-color: rgb(0, 153, 255);
+              position: absolute;
+              border-radius: 50%;
+              transform: rotateX(100deg) scaleY(-1);
+               animation: divEarth 15s linear infinite;
+               box-shadow: 0 0 20px 1px lightblue;
+       }
+}
+}
+
+.star{
+       width: 20px;
+       height: 20px;
+       background-color: white;
+       position: absolute;
+       left: -100px;
+       top: 50%;
+       animation: star 4s linear infinite;
+       z-index: -1;
+       clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+       &:nth-of-type(2){
+       left: -250px;
+       top: 65%;
+       animation: star-2 4s linear infinite ;
+       box-shadow: 0 0 10px 1ps yellow;
+       }
+       &:nth-of-type(3){
+              left: -300px;
+       top: 40%;
+       }
+       &:nth-of-type(4){
+              left: -500px;
+       top: 30%;
+       }
+       &:nth-of-type(5){
+              left: -400px;
+       top: 70%;
+       }
+}
+
+@keyframes earth {
+       to{transform: rotate(360deg);}
+}
+
+@keyframes divEarth {
+       to{transform:rotateX(100deg) scaleY(-1) rotateY(360deg) ;
+       }
+}
+
+@keyframes star{
+       to{top: -100%; left: 6000px;}
+}
+
+@keyframes star2 {
+       to{top: -90%; left: 6000px;}
+}

@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: roboto;
+  src: url(../font/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+  font-family: roboto;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  /* border: 1px solid white; */
+  > h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+  }
+}
+  .slide {
+  width: 800px;
+  height: 500px;
+  /* border: 1px solid white; */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 100px auto;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  > figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: 12s linear infinite;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:nth-of-type(1) {
+      animation-name: one;
+    }
+    &:nth-of-type(2) {
+      animation-name: two;
+    }
+    &:nth-of-type(3) {
+      animation-name: three;
+    }
+  }
+  > div {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    /* background-color: rgba(255, 255, 255, 0.429); */
+    /* backdrop-filter: blur(5px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid white; */
+    gap: 10px;
+    > span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fffffff6;
+      animation: 12s linear infinite;
+      &:nth-of-type(1) {
+        animation-name: mini-circles-1;
+      }
+      &:nth-of-type(2) {
+        animation-name: mini-circles-2;
+      }
+      &:nth-of-type(3) {
+        animation-name: mini-circles-3;
+      }
+    }
+  }
+}
+
+@keyframes one {
+  0% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  35.00001% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes two {
+  0% {
+    opacity: 0;
+  }
+  31% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 0;
+  }
+  68.00001% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes three {
+  0% {
+    opacity: 0;
+  }
+  64% {
+    opacity: 0;
+  }
+  68% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes mini-circles-1 {
+  0% {
+    transform: scale(1.6);
+  }
+  31% {
+    transform: scale(1.6);
+  }
+  35% {
+    transform: scale(1);
+  }
+  35.00001% {
+    transform: scale(1);
+  }
+  96% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.6);
+  }
+}
+@keyframes mini-circles-2 {
+  0% {
+    transform: scale(1);
+  }
+  31% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.6);
+  }
+  64% {
+    transform: scale(1.6);
+  }
+  68% {
+    transform: scale(1);
+  }
+  68.00001% {
+    transform: scale(1);
+  }
+  96% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes mini-circles-3 {
+  0% {
+    transform: scale(1);
+  }
+  64% {
+    transform: scale(1);
+  }
+  68% {
+    transform: scale(1.6);
+  }
+  96% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: deepskyblue;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  /* border-top: 2px solid orange; */
+  background-color: #fff;
+  > div {
+    /* border: 1px solid white; */
+    width: 100%;
+    &:first-of-type {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      > * {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        font-size: 22px;
+        color: black;
+      }
+      > h4 {
+        color: orange;
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+    &:last-of-type {
+      > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      > p {
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: roboto;
+  src: url(../font/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+  font-family: roboto;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid white; */
+  > h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 900;
+  }
+}
+
+section {
+  width: 100%;
+  min-height: 100px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > ul {
+        width: 200px;
+        transform: rotate3d(1, 1, 1, -75deg);
+        transform-style: preserve-3d;
+        transition:3s ;
+        /* &:hover{
+          >li{
+            &::before{
+              margin-top: -100px;
+            }
+          }
+        } */
+    > li {
+          border: .1px solid rgba(255, 255, 255, 0.487);
+          width: 100%;
+          height: 100px;
+          list-style-type: none;
+          color: white;
+          overflow: hidden;
+      &::before,&::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: hotpink;
+        font-weight: 600;
+        font-size: 35px;
+        transition: 3s;
+      }
+      &::before{
+        animation: stair 8s linear infinite alternate;
+      }
+      &:nth-of-type(1){
+        &::before{
+          content: '1';
+        }
+        &::after{
+          content: '2';
+        }
+      }
+      &:nth-of-type(2){
+       transform-origin: top;
+       transform: rotateX(90deg);
+        &::before{
+          content: '2';
+        }
+        &::after{
+          content: '3';
+        }
+      }
+      &:nth-of-type(3){
+       transform: translate3d(0, -100px , 100px);
+        &::before{
+          content: '3';
+        }
+        &::after{
+          content: '4';
+        }
+      }
+      &:nth-of-type(4){
+       transform: translate3d(0, -100px, 100px) rotateX(90deg);
+       transform-origin: top;
+        &::before{
+          content: '4';
+        }
+        &::after{
+          content: '5';
+        }
+      }
+      &:nth-of-type(5){
+       transform: translate3d(0, -200px, 200px);
+        &::before{
+          content: '5';
+        }
+        &::after{
+          content: '6';
+        }
+      }
+      &:nth-of-type(6){
+       transform: translate3d(0, -200px, 200px) rotateX(90deg);
+       transform-origin: top;
+        &::before{
+          content: '6';
+        }
+        &::after{
+          content: '7';
+        }
+      }
+      &:nth-of-type(7){
+       transform: translate3d(0, -300px, 300px);
+        &::before{
+          content: '7';
+        }
+        &::after{
+          content: '8';
+        }
+      }
+      &:nth-of-type(8){
+       transform: translate3d(0, -300px, 300px) rotateX(90deg);
+       transform-origin: top;
+        &::before{
+          content: '8';
+        }
+        &::after{
+          content: '1';
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  /* border-top: 2px solid orange; */
+  background-color: #fff;
+  color: black;
+  > div {
+    /* border: 1px solid white; */
+    width: 100%;
+    &:first-of-type {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      > * {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        font-size: 22px;
+      }
+      > h4 {
+        color: orange;
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+    &:last-of-type {
+      > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      > p {
+        color: black;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@keyframes stair {
+  0%{margin-top: 0;}
+  50%{margin-top: -100px;}
+  75%{margin-top: -100px;}
+  100%{margin: 0;}
+}
